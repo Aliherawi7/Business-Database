@@ -2,11 +2,18 @@ package com.herawi.database.controller;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
+@Controller("/")
 public class HomeController {
 
-    public String getHome(){
-        return "index.html";
+    @GetMapping
+    String homePage(){
+        return "index";
+    }
+
+    @GetMapping("/about")
+    String getAbout(){
+        return "about";
     }
 }
